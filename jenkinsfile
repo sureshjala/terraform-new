@@ -1,17 +1,17 @@
 pipeline {
     agent {label "DOCKER" }
     stages {
-        stage (git scm) {
+        stage ('git scm') {
             steps {
                 git branch: 'master', url: 'https://github.com/sureshjala/terraform-new.git'
             }
         }
-        stage (terraform init) {
+        stage ('terraform init') {
             steps {
                 sh "terraform init"
             }
         }
-        stage (terraform validate) {
+        stage ('terraform validate') {
             steps {
                 sh "terraform validate"
             }
