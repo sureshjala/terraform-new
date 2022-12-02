@@ -21,7 +21,7 @@ resource "null_resource" "dockerprovisoner" {
       connection {
       type = "ssh"  
       user = "ubuntu"
-      private_key = "${file("~/.ssh/id_rsa")}"
+      private_key = "${file("/home/ubuntu/.ssh/authorized_keys")}"
       port = 22
       host = aws_instance.docker.public_ip
     }
